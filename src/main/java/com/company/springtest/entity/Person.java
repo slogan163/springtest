@@ -1,4 +1,4 @@
-package com.company.springtest.shared.entity;
+package com.company.springtest.entity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

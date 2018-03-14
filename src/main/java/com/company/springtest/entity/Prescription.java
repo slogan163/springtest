@@ -1,4 +1,6 @@
-package com.company.springtest.shared.entity;
+package com.company.springtest.entity;
+
+import com.company.springtest.entity.enums.Priority;
 
 import javax.persistence.*;
 import javax.persistence.Entity;

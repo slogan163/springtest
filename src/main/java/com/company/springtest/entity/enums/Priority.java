@@ -1,4 +1,4 @@
-package com.company.springtest.shared.entity;
+package com.company.springtest.entity.enums;
 
 public enum Priority {
     NORMAL, CITO, STATIM
