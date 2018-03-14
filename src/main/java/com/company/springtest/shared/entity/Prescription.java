@@ -1,14 +1,32 @@
-package com.company.shared.entity;
+package com.company.springtest.shared.entity;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.Date;
 
+@Entity
+@Table(name = "prescription")
 public class Prescription {
-
+    @Column(name = "description")
     private String description;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "patient_id")
     private Patient patient;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
+
+    @Column(name = "creation_date")
+    @Temporal(TemporalType.DATE)
     private Date creationDate;
-    private int durationInDays;
+
+    @Column(name = "duration_in_days")
+    private Integer durationInDays;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "priority")
     private Priority priority;
 
     public Prescription() {
