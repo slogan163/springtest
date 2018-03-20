@@ -1,6 +1,26 @@
-/*C5*/SET SCHEMA PUBLIC
+/*C9*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C6*/SET SCHEMA PUBLIC
+/*C10*/SET SCHEMA PUBLIC
+alter table prescription drop constraint FK1ppr8greedyrey8nchpr0v4dn
+alter table prescription drop constraint FKqrlh184tfvdi95erwl65p4xj3
+drop table doctor if exists
+drop table patient if exists
+drop table prescription if exists
 DISCONNECT
-/*C7*/SET SCHEMA PUBLIC
+/*C11*/SET SCHEMA PUBLIC
+create table doctor (id bigint not null, version integer, first_name varchar(255), last_name varchar(255), mid_name varchar(255), specialization varchar(255), primary key (id))
+create table patient (id bigint not null, version integer, first_name varchar(255), last_name varchar(255), mid_name varchar(255), phone_number varchar(255), primary key (id))
+create table prescription (id bigint not null, version integer, creation_date date, description varchar(255), duration_in_days integer, priority varchar(255), doctor_id bigint, patient_id bigint, primary key (id))
+alter table prescription add constraint FK1ppr8greedyrey8nchpr0v4dn foreign key (doctor_id) references doctor
+alter table prescription add constraint FKqrlh184tfvdi95erwl65p4xj3 foreign key (patient_id) references patient
+DISCONNECT
+/*C12*/SET SCHEMA PUBLIC
+INSERT INTO DOCTOR VALUES(1,0,'Doc11','Doc12',NULL,'LOR')
+COMMIT
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
 DISCONNECT

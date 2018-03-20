@@ -24,7 +24,7 @@ public class ConsoleApp {
 
         List<Doctor> allDoctors = doctorService.findAll();
 
-        allDoctors.forEach(doc->System.out.println(doc.getFirstName()));
+        allDoctors.forEach(doc -> System.out.println(doc.getFirstName()));
 
     }
 }
