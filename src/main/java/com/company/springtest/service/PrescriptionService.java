@@ -1,4 +1,6 @@
 package com.company.springtest.service;
 
-public interface PrescriptionService extends GenericService {
+import com.company.springtest.entity.Prescription;
+
+public interface PrescriptionService extends GenericService<Prescription, Long> {
 }

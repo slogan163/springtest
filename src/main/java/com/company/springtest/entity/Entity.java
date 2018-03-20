@@ -4,9 +4,10 @@ package com.company.springtest.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @MappedSuperclass
-public abstract class Entity {
+public abstract class Entity implements Serializable {
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -18,7 +19,7 @@ public abstract class Entity {
     @Column(name = "version")
     private Integer version;
 
-    public Entity() {
+    protected Entity() {
     }
 
     public Long getId() {

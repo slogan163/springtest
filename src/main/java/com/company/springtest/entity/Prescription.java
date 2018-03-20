@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "prescription")
-public class Prescription {
+public class Prescription extends com.company.springtest.entity.Entity {
     @Column(name = "description")
     private String description;
 
