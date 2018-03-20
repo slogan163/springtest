@@ -12,12 +12,10 @@ public class Prescription extends com.company.springtest.entity.Entity {
     @Column(name = "description")
     private String description;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "patient_id")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "prescription")
     private Patient patient;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "doctor_id")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "prescription")
     private Doctor doctor;
 
     @Column(name = "creation_date")

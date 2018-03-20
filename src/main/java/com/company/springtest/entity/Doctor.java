@@ -10,7 +10,7 @@ public class Doctor extends Person {
     @Column(name = "specialization")
     private String specialization;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "doctor")
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "prescription_id")
     private Prescription prescription;
 
